@@ -81,7 +81,7 @@ export class AppComponent implements OnInit {
   onSelect(hero: Hero) { this.selectedHero = hero; }
 
   getHeroes() {
-    this.heroes = this.heroService.getHeroes();
+    this.heroService.getHeroes().then(heroes => this.heroes = heroes);
   }
 
   ngOnInit() {
